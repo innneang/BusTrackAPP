@@ -100,15 +100,14 @@ getBus('514');
 function getBus(busNum) {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8000/track/" + busNum,
+        url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
         success: function (data) {
             if (BusSelect != 0) {
                 BusSelect.remove();
-                console.log('removedone');
             }
             else {
-                console.log('notremove');
+                console.log('! Remove');
             }
             dataR = data;
             var Group = [];
