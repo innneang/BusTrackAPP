@@ -8,6 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Bus Tracker</title>
+    <link rel="apple-touch-icon" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HereBus">
+
 </head>
 
 <body>
@@ -21,10 +28,16 @@
     .leaflet-control-layers.leaflet-control {
         zoom: 3;
     }
-    .leaflet-control-zoom{
-        display:none;
+
+    .leaflet-control-zoom {
+        display: none;
     }
-    
+    body {
+   -webkit-user-select: none;
+}
+body {
+   -webkit-tap-highlight-color: transparent;
+}
 </style>
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
