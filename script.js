@@ -1,6 +1,5 @@
 //Rotate leaflet marker by bbecquet 
 (function () {
-    // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
 
@@ -14,11 +13,8 @@
         }
         this.options.rotationOrigin = this.options.rotationOrigin || iconAnchor || 'center bottom';
         this.options.rotationAngle = this.options.rotationAngle || 0;
-
-        // Ensure marker keeps rotated during dragging
         this.on('drag', function (e) { e.target._applyRotation(); });
     });
-
     L.Marker.include({
         _initIcon: function () {
             proto_initIcon.call(this);
@@ -97,6 +93,7 @@ getBus('73');
 getBus('204');
 getBus('13');
 getBus('514');
+getBus('po8');
 function getBus(busNum) {
     $.ajax({
         type: "GET",
