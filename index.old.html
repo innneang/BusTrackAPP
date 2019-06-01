@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
+
+<head>
     <title>Here Bus</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-    <link href='menu.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="touch-icon-iphone-retina.png">
     <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
     <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="HereBus">
     <link rel="apple-touch-startup-image"
         media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
@@ -46,37 +41,36 @@
     <link rel="apple-touch-startup-image"
         media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
         href="/apple-launch-1536x2048.png">
-  </head>
-  <body>
-    
-    <div class="container">
-      <div class="phone">
-        <div class="content">
-                
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-            <ul id="menu">
-              <li><a href="#">Refresh</a></li>
-              <li><a href="#">Background</a></li>
-              <li><a href="#">Contributions</a></li>
-              <li><a href="#">Contact</a></li>
-              <p class='builtWith'>Written with <span style="color: #f05f5f;">♥</span> in Bangkok</p>
-            </ul>
-           </div>
-          </nav>
-          <div id="mapid"></div>
 
-        </div>
-       </div>
-    </div>
-   
-  </body>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+</head>
+
+<body>
+    <div id="mapid"></div>
+</body>
+<style>
+    #mapid {
+        height: 100vh;
+    }
+
+    .leaflet-control-layers.leaflet-control {
+        zoom: 3;
+    }
+
+    .leaflet-control-zoom {
+        display: none;
+    }
+
+    body {
+        -webkit-user-select: none;
+    }
+
+    body {
+        -webkit-tap-highlight-color: transparent;
+    }
+</style>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
 <script src="script.js"></script>
+
 </html>
