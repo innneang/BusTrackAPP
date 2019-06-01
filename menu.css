@@ -176,3 +176,6 @@ nav{
         zoom:1.4;
     }
 }
+.leaflet-control-layers{
+    margin-top: 60px;
+}
