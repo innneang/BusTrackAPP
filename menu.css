@@ -179,3 +179,6 @@ nav{
 .leaflet-control-layers{
     margin-top: 60px;
 }
+.leaflet-top{
+    margin-top: 120px;
+}
