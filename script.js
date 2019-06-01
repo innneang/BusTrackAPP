@@ -100,7 +100,7 @@ getBus('514');
 function getBus(busNum) {
     $.ajax({
         type: "GET",
-        url: "https://api.innnblog.com/track/" + busNum,
+        url: "http://api.innnblog.com/track/" + busNum,
         crossDomain: true,
         success: function (data) {
             if (BusSelect != 0) {
