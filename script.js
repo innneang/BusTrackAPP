@@ -139,6 +139,9 @@ $('#refresh').click(function(){
     setTimeout(function(){
         timeout = 0;
         console.log('reset');
-    }, 2000);
+    }, 20000);
+}
+else{
+    console.log('wait for minute')
 }
 });
