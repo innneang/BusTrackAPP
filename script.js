@@ -111,7 +111,6 @@ function getBus(busNum) {
             dataR.forEach(element => {
                 Group.push(L.marker([element.lat, element.lng], { icon: greenIcon, rotationAngle: element.direction }));
             });
-            console.log(Group);
             var busGroup = L.layerGroup(Group);
             //a3.addTo(mymap);
             overlays[busNum] = busGroup;
