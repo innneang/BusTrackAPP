@@ -121,8 +121,10 @@ function getBus(busNum) {
         dataType: "json"
     });
 }
-
+var timeout = 0;
 $('#refresh').click(function(){
+    if(timeout == 0){
+    console.log('Refresh!');
     getBus('a3');
     getBus('73k');
     getBus('54');
@@ -132,4 +134,11 @@ $('#refresh').click(function(){
     getBus('13');
     getBus('514');
     getBus('po8');
+    timeout = 1;
+    console.log('timeout ');
+    setTimeout(function(){
+        timeout = 0;
+        console.log('reset');
+    }, 2000);
+}
 });
