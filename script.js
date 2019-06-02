@@ -122,3 +122,14 @@ function getBus(busNum) {
     });
 }
 
+$('#refresh').click(function(){
+    getBus('a3');
+    getBus('73k');
+    getBus('54');
+    getBus('204');
+    getBus('73');
+    getBus('204');
+    getBus('13');
+    getBus('514');
+    getBus('po8');
+});
