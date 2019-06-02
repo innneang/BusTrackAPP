@@ -104,7 +104,7 @@ function getBus(busNum) {
                 BusSelect.remove();
             }
             else {
-                console.log('! Remove');
+                //console.log('! Remove');
             }
             dataR = data;
             var Group = [];
@@ -134,11 +134,10 @@ $('#refresh').click(function(){
     getBus('514');
     getBus('po8');
     timeout = 1;
-    console.log('timeout ');
     setTimeout(function(){
         timeout = 0;
         console.log('reset');
-    }, 20000);
+    }, 60000);
 }
 else{
     console.log('wait for minute')
