@@ -133,6 +133,10 @@ $('#refresh').click(function(){
     getBus('13');
     getBus('514');
     getBus('po8');
+    getBus('510');
+    getBus('a1');
+    getBus('a2');
+    getBus('a4');
     timeout = 1;
     setTimeout(function(){
         timeout = 0;
