@@ -94,6 +94,10 @@ getBus('204');
 getBus('13');
 getBus('514');
 getBus('po8');
+getBus('510');
+getBus('a1');
+getBus('a2');
+getBus('a4');
 function getBus(busNum) {
     $.ajax({
         type: "GET",
