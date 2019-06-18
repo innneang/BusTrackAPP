@@ -92,6 +92,7 @@ function getBus(busNum) {
         url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
         success: function (data) {
+            ajax[busNum].success = true;
             if (BusSelect != 0) {
                 BusSelect.remove();
             }
@@ -147,8 +148,14 @@ $('.busNum').change(function () {
     }
     else {
         console.log($(this).attr('id') + 'uncheckededdddd');
-        ajax[$(this).attr('id')].abort();
-        overlays[$(this).attr('id')].removeFrom(mymap);
+        if (ajax[busNum].success == false) {
+            ajax[$(this).attr('id')].abort();
+        }
+        else {
+            overlays[$(this).attr('id')].removeFrom(mymap);
+
+        }
+
 
     }
 });
