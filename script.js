@@ -118,7 +118,8 @@ function getBus(busNum) {
             var busGroup = L.layerGroup(Group);
             //a3.addTo(mymap);
             overlays[busNum] = busGroup;
-            BusSelect = L.control.layers(null, overlays).addTo(mymap);
+            //BusSelect = L.control.layers(null, overlays).addTo(mymap);
+            busGroup.addTo(mymap);
 
         },
         dataType: "json"
