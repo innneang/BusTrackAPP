@@ -87,7 +87,7 @@ var overlays = Object;
 var BusSelect = 0;
 var ajax = Object
 function getBus(busNum) {
-    ajax[busnum] = $.ajax({
+    ajax[busNum] = $.ajax({
         type: "GET",
         url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
