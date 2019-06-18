@@ -148,7 +148,7 @@ $('.busNum').change(function () {
     }
     else {
         console.log($(this).attr('id') + 'uncheckededdddd');
-        if (ajax[$(this).attr('id')].success == false) {
+        if (ajax[$(this).attr('id')].success !== true) {
             ajax[$(this).attr('id')].abort();
         }
         else {
