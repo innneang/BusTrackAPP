@@ -118,8 +118,8 @@ $('#refresh').click(function(){
     console.log('Refresh!');
     overlays = [];
     mymap.eachLayer(function(layer){
-        console.log(layer._url);
-        if(layer._url != null){
+        console.log(layer);
+        if(layer._url !== 'undefined'){
             layer.remove();
         }
         
