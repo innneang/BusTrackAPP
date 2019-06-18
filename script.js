@@ -104,9 +104,7 @@ function getBus(busNum) {
                 Group.push(L.marker([element.lat, element.lng], { icon: greenIcon, rotationAngle: element.direction }));
             });
             var busGroup = L.layerGroup(Group);
-            //a3.addTo(mymap);
             overlays[busNum] = busGroup;
-            //BusSelect = L.control.layers(null, overlays).addTo(mymap);
             busGroup.addTo(mymap);
             console.log(' bus loading is completed');
 
@@ -118,19 +116,13 @@ var timeout = 0;
 $('#refresh').click(function(){
     if(timeout == 0){
     console.log('Refresh!');
-    getBus('a3');
-    getBus('73k');
-    getBus('54');
-    getBus('204');
-    getBus('73');
-    getBus('204');
-    getBus('13');
-    getBus('514');
-    getBus('po8');
-    getBus('510');
-    getBus('a1');
-    getBus('a2');
-    getBus('a4');
+    overlays = [];
+    $('#menu input:checked').each(function(){
+        console.log('the checked is' + $(this).attr('id'));
+        // run remove bus layer first
+        getBus($(this).attr('id'));
+    });
+
     timeout = 1;
     setTimeout(function(){
         timeout = 0;
