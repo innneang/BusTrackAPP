@@ -85,7 +85,7 @@ var greenIcon = L.icon({
 var dataR;
 var overlays = Object;
 var BusSelect = 0;
-var ajax = Object
+var ajax = Array;
 function getBus(busNum) {
     ajax[busNum] = $.ajax({
         type: "GET",
