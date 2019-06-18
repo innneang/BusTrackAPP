@@ -85,9 +85,9 @@ var greenIcon = L.icon({
 var dataR;
 var overlays = Object;
 var BusSelect = 0;
-
+var ajax
 function getBus(busNum) {
-    $.ajax({
+    ajax = $.ajax({
         type: "GET",
         url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
@@ -134,7 +134,7 @@ $('#refresh').click(function () {
         setTimeout(function () {
             timeout = 0;
             console.log('reset');
-        }, 60000);
+        }, 1000);
     }
     else {
         console.log('wait for minute')
