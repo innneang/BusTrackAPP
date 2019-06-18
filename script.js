@@ -117,6 +117,9 @@ $('#refresh').click(function(){
     if(timeout == 0){
     console.log('Refresh!');
     overlays = [];
+    mymap.eachLayer(function(layer){
+        layer.remove();
+    });
     $('#menu input:checked').each(function(){
         console.log('the checked is' + $(this).attr('id'));
         // run remove bus layer first
