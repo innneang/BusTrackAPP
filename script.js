@@ -140,8 +140,9 @@ else{
     console.log('wait for minute')
 }
 });
-$('#514').change(function(){
+$('#514').change(function(this){
     if(this.checked){
+        console.log(this.name)
         getBus('514');
     }
 });
