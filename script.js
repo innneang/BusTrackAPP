@@ -85,19 +85,7 @@ var greenIcon = L.icon({
 var dataR;
 var overlays = Object;
 var BusSelect = 0;
-getBus('a3');
-getBus('73k');
-getBus('54');
-getBus('204');
-getBus('73');
-getBus('204');
-getBus('13');
-getBus('514');
-getBus('po8');
-getBus('510');
-getBus('a1');
-getBus('a2');
-getBus('a4');
+
 function getBus(busNum) {
     $.ajax({
         type: "GET",
@@ -151,4 +139,9 @@ $('#refresh').click(function(){
 else{
     console.log('wait for minute')
 }
+});
+$('#514').change(function(){
+    if(this.checked){
+        getBus('514');
+    }
 });
