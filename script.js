@@ -108,6 +108,7 @@ function getBus(busNum) {
             overlays[busNum] = busGroup;
             //BusSelect = L.control.layers(null, overlays).addTo(mymap);
             busGroup.addTo(mymap);
+            console.log(' bus loading is completed');
 
         },
         dataType: "json"
@@ -140,9 +141,9 @@ else{
     console.log('wait for minute')
 }
 });
-$('#514').change(function(this){
+$('.busNum').change(function(){
     if(this.checked){
-        console.log(this.name)
-        getBus('514');
+        console.log($(this).attr('id') + 'ticked. Bus is loading');
+        getBus($(this).attr('id'));
     }
 });
