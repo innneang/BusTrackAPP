@@ -106,7 +106,6 @@ function getBus(busNum) {
             var busGroup = L.layerGroup(Group);
             overlays[busNum] = busGroup;
             busGroup.addTo(mymap);
-            console.log(' bus loading is completed');
 
         },
         dataType: "json"
@@ -118,9 +117,7 @@ $('#refresh').click(function () {
         console.log('Refresh!');
         overlays = [];
         mymap.eachLayer(function (layer) {
-            console.log(layer);
             if (typeof layer._url == 'undefined') {
-                console.log('a' + layer._url);
                 layer.remove();
             }
             getLocation();
@@ -147,5 +144,9 @@ $('.busNum').change(function () {
     if (this.checked) {
         console.log($(this).attr('id') + 'ticked. Bus is loading');
         getBus($(this).attr('id'));
+    }
+    else {
+        console.log($(this).attr('id') + 'uncheckededdddd');
+        overlays[$(this).attr('id')].removeFrom(mymap);
     }
 });
