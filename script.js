@@ -69,6 +69,7 @@ function showPosition(position) {
     var marker = L.marker([uLat, uLng]).addTo(mymap);
 }
 getLocation();
+$('.ld').css('display', 'none');
 var mymap = L.map('mapid').setView([13.7333439, 100.5359456], 15);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaW5ubmVhbmciLCJhIjoiY2p3Yzlkdmg1MDBvMDQ5bnBlaXV3OGFycyJ9.4J6Br9eq-Yck6JyXqV1k8Q', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -115,6 +116,7 @@ function getBus(busNum) {
 var timeout = 0;
 $('#refresh').click(function () {
     if (timeout == 0) {
+
         console.log('Refresh!');
         overlays = [];
         mymap.eachLayer(function (layer) {
@@ -125,14 +127,17 @@ $('#refresh').click(function () {
 
 
         });
+
         $('#menu input:checked').each(function () {
             console.log('the checked is' + $(this).attr('id'));
-            // run remove bus layer first
             getBus($(this).attr('id'));
         });
-
+        $('.ld').css('display', 'inline-block');
+        $('#refresh').css('display', 'none');
         timeout = 1;
         setTimeout(function () {
+            $('.ld').css('display', 'none');
+            $('#refresh').css('display', 'inline');
             timeout = 0;
             console.log('reset');
         }, 1000);
