@@ -119,7 +119,8 @@ $('#refresh').click(function(){
     overlays = [];
     mymap.eachLayer(function(layer){
         console.log(layer);
-        if(layer._url !== 'undefined'){
+        if(typeof layer._url == 'undefined'){
+            console.log('a' + layer._url);
             layer.remove();
         }
         
