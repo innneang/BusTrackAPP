@@ -85,9 +85,9 @@ var greenIcon = L.icon({
 var dataR;
 var overlays = Object;
 var BusSelect = 0;
-var ajax
+var ajax = Object
 function getBus(busNum) {
-    ajax = $.ajax({
+    ajax[busnum] = $.ajax({
         type: "GET",
         url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
@@ -147,6 +147,8 @@ $('.busNum').change(function () {
     }
     else {
         console.log($(this).attr('id') + 'uncheckededdddd');
+        ajax[$(this).attr('id')].abort();
         overlays[$(this).attr('id')].removeFrom(mymap);
+
     }
 });
