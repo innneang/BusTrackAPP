@@ -118,8 +118,12 @@ $('#refresh').click(function(){
     console.log('Refresh!');
     overlays = [];
     mymap.eachLayer(function(layer){
-        layer.remove();
-        console.log(layer);
+        console.log(layer._url);
+        if(layer._url != null){
+            layer.remove();
+        }
+        
+
     });
     $('#menu input:checked').each(function(){
         console.log('the checked is' + $(this).attr('id'));
