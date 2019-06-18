@@ -113,37 +113,38 @@ function getBus(busNum) {
     });
 }
 var timeout = 0;
-$('#refresh').click(function(){
-    if(timeout == 0){
-    console.log('Refresh!');
-    overlays = [];
-    mymap.eachLayer(function(layer){
-        console.log(layer);
-        if(typeof layer._url == 'undefined'){
-            console.log('a' + layer._url);
-            layer.remove();
-        }
-        
+$('#refresh').click(function () {
+    if (timeout == 0) {
+        console.log('Refresh!');
+        overlays = [];
+        mymap.eachLayer(function (layer) {
+            console.log(layer);
+            if (typeof layer._url == 'undefined') {
+                console.log('a' + layer._url);
+                layer.remove();
+            }
+            getLocation();
 
-    });
-    $('#menu input:checked').each(function(){
-        console.log('the checked is' + $(this).attr('id'));
-        // run remove bus layer first
-        getBus($(this).attr('id'));
-    });
 
-    timeout = 1;
-    setTimeout(function(){
-        timeout = 0;
-        console.log('reset');
-    }, 60000);
-}
-else{
-    console.log('wait for minute')
-}
+        });
+        $('#menu input:checked').each(function () {
+            console.log('the checked is' + $(this).attr('id'));
+            // run remove bus layer first
+            getBus($(this).attr('id'));
+        });
+
+        timeout = 1;
+        setTimeout(function () {
+            timeout = 0;
+            console.log('reset');
+        }, 60000);
+    }
+    else {
+        console.log('wait for minute')
+    }
 });
-$('.busNum').change(function(){
-    if(this.checked){
+$('.busNum').change(function () {
+    if (this.checked) {
         console.log($(this).attr('id') + 'ticked. Bus is loading');
         getBus($(this).attr('id'));
     }
