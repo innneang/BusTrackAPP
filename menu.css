@@ -199,3 +199,7 @@ nav{
     height: 20vh;
     overflow: auto;
 }
+#menu{
+    height: 80vh;
+    overflow: auto;
+}
