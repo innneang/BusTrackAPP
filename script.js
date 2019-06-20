@@ -112,6 +112,7 @@ function getBus(busNum) {
             overlays[busNum] = busGroup;
             busGroup.addTo(mymap);
             loadCompleted++;
+            console.log('loadcomplete'+ loadCompleted);
             loadingCheck();
 
         },
@@ -123,6 +124,7 @@ function loadingCheck(){
         $('.ld').css('display', 'none');
         $('#refresh').css('display', 'inline');
     }
+    console.log('loadcompletedddddd');
 }
 var timeout = 0;
 $('#refresh').click(function () {
