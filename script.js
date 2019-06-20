@@ -112,9 +112,9 @@ function getBus(busNum) {
             var busGroup = L.layerGroup(Group);
             overlays[busNum] = busGroup;
             busGroup.addTo(mymap);
-            loadCompleted++;
             console.log('loadcomplete'+ loadCompleted);
             if(isReset == true){
+                loadCompleted++;
                 loadingCheck();
             }
 
