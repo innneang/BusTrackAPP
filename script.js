@@ -89,6 +89,7 @@ var BusSelect = 0;
 var refreshBus = Object;
 var ajax = Array;
 var loadCompleted = 0;
+var isReset = false;
 var allLoad = 0;
 function getBus(busNum) {
     ajax[busNum] = $.ajax({
@@ -113,7 +114,10 @@ function getBus(busNum) {
             busGroup.addTo(mymap);
             loadCompleted++;
             console.log('loadcomplete'+ loadCompleted);
-            loadingCheck();
+            if(isReset == true){
+                loadingCheck();
+            }
+
 
         },
         dataType: "json"
@@ -133,7 +137,7 @@ function loadingCheck(){
 var timeout = 0;
 $('#refresh').click(function () {
 
-
+        isReset = true;
         console.log('Refresh!');
         overlays = [];
         mymap.eachLayer(function (layer) {
