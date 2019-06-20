@@ -136,7 +136,8 @@ function loadingCheck(){
 }
 var timeout = 0;
 $('#refresh').click(function () {
-
+        allLoad =0;
+        loadCompleted = 0;
         isReset = true;
         console.log('Refresh!');
         overlays = [];
