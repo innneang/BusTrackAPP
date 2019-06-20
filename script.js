@@ -124,6 +124,10 @@ function loadingCheck(){
         $('.ld').css('display', 'none');
         $('#refresh').css('display', 'inline');
     }
+    else{
+        console.log('loadcompleteddd'+ loadCompleted);
+        console.log('allload'+ allLoad);
+    }
     console.log('loadcompletedddddd');
 }
 var timeout = 0;
