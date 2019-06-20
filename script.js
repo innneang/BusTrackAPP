@@ -86,11 +86,7 @@ var greenIcon = L.icon({
 var dataR;
 var overlays = Object;
 var BusSelect = 0;
-var refreshBus = Object;
 var ajax = Array;
-var loadCompleted = 0;
-var isReset = false;
-var allLoad = 0;
 function getBus(busNum) {
     ajax[busNum] = $.ajax({
         type: "GET",
@@ -112,33 +108,15 @@ function getBus(busNum) {
             var busGroup = L.layerGroup(Group);
             overlays[busNum] = busGroup;
             busGroup.addTo(mymap);
-            console.log('loadcomplete'+ loadCompleted);
-            if(isReset == true){
-                loadCompleted++;
-                loadingCheck();
-            }
-
 
         },
         dataType: "json"
     });
 }
-function loadingCheck(){
-    if(loadCompleted == allLoad){
-        $('.ld').css('display', 'none');
-        $('#refresh').css('display', 'inline');
-    }
-    else{
-        console.log('loadcompleteddd'+ loadCompleted);
-        console.log('allload'+ allLoad);
-    }
-    console.log('loadcompletedddddd');
-}
 var timeout = 0;
 $('#refresh').click(function () {
-        allLoad =0;
-        loadCompleted = 0;
-        isReset = true;
+    if (timeout == 0) {
+
         console.log('Refresh!');
         overlays = [];
         mymap.eachLayer(function (layer) {
@@ -147,20 +125,28 @@ $('#refresh').click(function () {
             }
             getLocation();
 
-        });
-        allLoad = $('#menu input[type="checkbox"]:checked').length;
-        $('#menu input:checked').each(function () {
-            console.log('the checked is' + $(this).attr('id'));  
-            getBus($(this).attr('id'));
-            console.log('loading num = ' + allLoad);
 
+        });
+
+        $('#menu input:checked').each(function () {
+            console.log('the checked is' + $(this).attr('id'));
+            getBus($(this).attr('id'));
         });
         $('.ld').css('display', 'inline-block');
         $('#refresh').css('display', 'none');
-
+        timeout = 1;
+        setTimeout(function () {
+            $('.ld').css('display', 'none');
+            $('#refresh').css('display', 'inline');
+            timeout = 0;
+            console.log('reset');
+        }, 1000);
+    }
+    else {
+        console.log('wait for minute')
+    }
 });
 $('.busNum').change(function () {
-    $('#refresh').css('visibility', 'visible');
     if (this.checked) {
         console.log($(this).attr('id') + 'ticked. Bus is loading');
         getBus($(this).attr('id'));
