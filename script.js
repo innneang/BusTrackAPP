@@ -129,7 +129,7 @@ $('#refresh').click(function () {
         });
 
         $('#menu input:checked').each(function () {
-            console.log('the checked is' + $(this).attr('id'));
+            //console.log('the checked is' + $(this).attr('id'));
             getBus($(this).attr('id'));
         });
         $('.ld').css('display', 'inline-block');
@@ -139,7 +139,7 @@ $('#refresh').click(function () {
             $('.ld').css('display', 'none');
             $('#refresh').css('display', 'inline');
             timeout = 0;
-            console.log('reset');
+            //console.log('reset');
         }, 1000);
     }
     else {
@@ -148,11 +148,11 @@ $('#refresh').click(function () {
 });
 $('.busNum').change(function () {
     if (this.checked) {
-        console.log($(this).attr('id') + 'ticked. Bus is loading');
+        //console.log($(this).attr('id') + 'ticked. Bus is loading');
         getBus($(this).attr('id'));
     }
     else {
-        console.log($(this).attr('id') + 'uncheckededdddd');
+        //console.log($(this).attr('id') + 'uncheckededdddd');
         if (ajax[$(this).attr('id')].success !== true) {
             ajax[$(this).attr('id')].abort();
         }
