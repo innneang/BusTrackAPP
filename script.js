@@ -160,6 +160,7 @@ $('#refresh').click(function () {
 
 });
 $('.busNum').change(function () {
+    $('#refresh').css('visibility', 'visible');
     if (this.checked) {
         console.log($(this).attr('id') + 'ticked. Bus is loading');
         getBus($(this).attr('id'));
