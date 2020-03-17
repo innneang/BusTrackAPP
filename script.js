@@ -90,7 +90,7 @@ var ajax = Array;
 function getBus(busNum) {
     ajax[busNum] = $.ajax({
         type: "GET",
-        url: "http://api.innnblog.com/track/" + busNum,
+        url: "https://api.innnblog.com/track/" + busNum,
         crossDomain: true,
         success: function (data) {
             ajax[busNum].success = true;
