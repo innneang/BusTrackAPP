@@ -13,6 +13,9 @@ li a {
     font-weight: 400;
     transition: 200ms;
 }
+.leaflet-control-attribution{
+    display:none;
+}
 
 li a:hover {
     opacity: 0.5;

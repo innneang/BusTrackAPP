@@ -72,7 +72,7 @@ getLocation();
 $('.ld').css('display', 'none');
 var mymap = L.map('mapid').setView([13.7333439, 100.5359456], 15);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaW5ubmVhbmciLCJhIjoiY2p3Yzlkdmg1MDBvMDQ5bnBlaXV3OGFycyJ9.4J6Br9eq-Yck6JyXqV1k8Q', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: '',
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'your.mapbox.access.token'
