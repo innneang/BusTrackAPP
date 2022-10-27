@@ -5,13 +5,9 @@
   <meta charset="utf-8">
   <title>Here Bus</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
   <link href='menu.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,7 +44,7 @@
   <link rel="apple-touch-startup-image"
     media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
     href="/apple-launch-1536x2048.png">
-    <link rel='stylesheet' href='https://loading.io/css/loading.css'/>
+  <link rel='stylesheet' href='https://loading.io/css/loading.css' />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39295142-2"></script>
   <script>
@@ -74,30 +70,72 @@
             <span class='x'></span>
             <span class='x'></span>
             <ul id="menu">
-              <li><div class='ld ld-ring ld-cycle'></div><a id='refresh' href="#" ><i class="fas fa-redo-alt"></i>   Refresh</a></li>
-              <label><div><input id='po40' class='busNum' type="checkbox"><span> 40 lamsali</span></div></label>
-              <label><div><input id='mini40' class='busNum' type="checkbox"><span> 40 hualamphong</span></div></label>
-              <label><div><input id='48' class='busNum' type="checkbox"><span> 48</span></div></label>
-              <label><div><input id='104' class='busNum' type="checkbox"><span> 104</span></div></label>
-              <label><div><input id='113' class='busNum' type="checkbox"><span> 113</span></div></label>
-              <label><div><input id='124' class='busNum' type="checkbox"><span> 124</span></div></label>
-              <label><div><input id='150' class='busNum' type="checkbox"><span> 150</span></div></label>
-              <label><div><input id='167' class='busNum' type="checkbox"><span> 167</span></div></label>
-              <label><div><input id='504' class='busNum' type="checkbox"><span> 504</span></div></label>
-              <label><div><input id='514' class='busNum' type="checkbox"><span> 514</span></div></label>
-              <label><div><input id='538' class='busNum' type="checkbox"><span> 538</span></div></label>
-              <label><div><input id='547' class='busNum' type="checkbox"><span> 547</span></div></label>
-              <label><div><input id='73' class='busNum' type="checkbox"><span> 73</span></div></label>
-              <label><div><input id='13' class='busNum' type="checkbox"><span> 13</span></div></label>
-              <label><div><input id='510' class='busNum' type="checkbox"><span> 510</span></div></label>
-              <label><div><input id='a1' class='busNum' type="checkbox"><span> A1</span></div></label>
-              <label><div><input id='a2' class='busNum' type="checkbox"><span> A2</span></div></label>
-              <label><div><input id='a3' class='busNum' type="checkbox"><span> A3</span></div></label>
-              <label><div><input id='a4' class='busNum' type="checkbox"><span> A4</span></div></label>
+              <li>
+                <div class='ld ld-ring ld-cycle'></div><a id='refresh' href="#"><i class="fas fa-redo-alt"></i>
+                  Refresh</a>
+              </li>
+              <label>
+                <div><input id='po40' class='busNum' type="checkbox"><span> 40 lamsali</span></div>
+              </label>
+              <label>
+                <div><input id='mini40' class='busNum' type="checkbox"><span> 40 hualamphong</span></div>
+              </label>
+              <label>
+                <div><input id='48' class='busNum' type="checkbox"><span> 48</span></div>
+              </label>
+              <label>
+                <div><input id='104' class='busNum' type="checkbox"><span> 104</span></div>
+              </label>
+              <label>
+                <div><input id='113' class='busNum' type="checkbox"><span> 113</span></div>
+              </label>
+              <label>
+                <div><input id='124' class='busNum' type="checkbox"><span> 124</span></div>
+              </label>
+              <label>
+                <div><input id='150' class='busNum' type="checkbox"><span> 150</span></div>
+              </label>
+              <label>
+                <div><input id='167' class='busNum' type="checkbox"><span> 167</span></div>
+              </label>
+              <label>
+                <div><input id='504' class='busNum' type="checkbox"><span> 504</span></div>
+              </label>
+              <label>
+                <div><input id='514' class='busNum' type="checkbox"><span> 514</span></div>
+              </label>
+              <label>
+                <div><input id='538' class='busNum' type="checkbox"><span> 538</span></div>
+              </label>
+              <label>
+                <div><input id='547' class='busNum' type="checkbox"><span> 547</span></div>
+              </label>
+              <label>
+                <div><input id='73' class='busNum' type="checkbox"><span> 73</span></div>
+              </label>
+              <label>
+                <div><input id='13' class='busNum' type="checkbox"><span> 13</span></div>
+              </label>
+              <label>
+                <div><input id='510' class='busNum' type="checkbox"><span> 510</span></div>
+              </label>
+              <label>
+                <div><input id='a1' class='busNum' type="checkbox"><span> A1</span></div>
+              </label>
+              <label>
+                <div><input id='a2' class='busNum' type="checkbox"><span> A2</span></div>
+              </label>
+              <label>
+                <div><input id='a3' class='busNum' type="checkbox"><span> A3</span></div>
+              </label>
+              <label>
+                <div><input id='a4' class='busNum' type="checkbox"><span> A4</span></div>
+              </label>
 
               <p style='font-size:0.8em; ' class='builtWith'>Made with <span style="color: #f05f5f;">♥</span> by <a
-                  style='text-decoration: none; color:#6b6b6b;' href='https://twitter.com/innneang'>@innneang</a><br> and thanked <a
-                  style='text-decoration: none; color:#6b6b6b;' href='https://twitter.com/petchsira'>@petchsira</a> for contributions</p>
+                  style='text-decoration: none; color:#6b6b6b;' href='https://twitter.com/innneang'>@innneang</a><br>
+                and thanked <a style='text-decoration: none; color:#6b6b6b;'
+                  href='https://twitter.com/petchsira'>@petchsira</a> for contributions</p>
             </ul>
           </div>
         </nav>
@@ -108,9 +146,8 @@
   </div>
 
 </body>
-<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-  crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+  integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 <script src="script.js"></script>
 
 </html>
