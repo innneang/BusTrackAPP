@@ -70,7 +70,6 @@ var uLng;
 function showPosition(position) {
   uLat = position.coords.latitude;
   uLng = position.coords.longitude;
-  var marker = L.marker([uLat, uLng]).addTo(mymap);
 }
 getLocation();
 $(".ld").css("display", "none");
