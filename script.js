@@ -21,6 +21,7 @@
     _initIcon: function () {
       proto_initIcon.call(this);
     },
+    
 
     _setPos: function (pos) {
       proto_setPos.call(this, pos);
