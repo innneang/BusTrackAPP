@@ -4,7 +4,6 @@
   var proto_setPos = L.Marker.prototype._setPos;
 
   var oldIE = L.DomUtil.TRANSFORM === "msTransform";
-
   L.Marker.addInitHook(function () {
     var iconOptions = this.options.icon && this.options.icon.options;
     var iconAnchor = iconOptions && this.options.icon.options.iconAnchor;
